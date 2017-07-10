@@ -14,7 +14,20 @@ class CreateTaskViewController: UIViewController {
     
     @IBOutlet weak var importantSwitch: UISwitch!
     
+    var previousVC = TasksViewController()
+    
     @IBAction func addTapped(_ sender: Any) {
+        // Create a task from information
+        
+        let task = Task()
+        task.name = taskNameTextField.text!
+        task.important = importantSwitch.isOn
+        
+        //Add new task to Task controller
+        
+        previousVC.tasks.append(task)
+        
+        
     }
     
     override func viewDidLoad() {
